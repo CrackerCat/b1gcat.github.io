@@ -1,3 +1,3 @@
 {
-    "plugins": [  "-lunr", "-search", "search-pro", "page-treeview","copy-code-button"]
+    "plugins": [  "-lunr", "-search", "search-pro", "copy-code-button"]
 }
