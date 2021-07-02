@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Hack · GitBook</title>
+        <title>模运算 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="内网技巧.html" />
+    <link rel="next" href="SM2.html" />
     
-    
-    <link rel="prev" href="../crypto/SM2.html" />
     
 
     </head>
@@ -116,9 +114,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../crypto/模运算.html">
+        <li class="chapter active" data-level="1.2.1" data-path="模运算.html">
             
-                <a href="../crypto/模运算.html">
+                <a href="模运算.html">
             
                     
                     模运算
@@ -129,9 +127,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../crypto/SM2.html">
+        <li class="chapter " data-level="1.2.2" data-path="SM2.html">
             
-                <a href="../crypto/SM2.html">
+                <a href="SM2.html">
             
                     
                     SM 2
@@ -147,9 +145,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3" data-path="hack.html">
+        <li class="chapter " data-level="1.3" data-path="../hack/hack.html">
             
-                <a href="hack.html">
+                <a href="../hack/hack.html">
             
                     
                     Hack
@@ -161,9 +159,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1" data-path="内网技巧.html">
+        <li class="chapter " data-level="1.3.1" data-path="../hack/内网技巧.html">
             
-                <a href="内网技巧.html">
+                <a href="../hack/内网技巧.html">
             
                     
                     内网技巧
@@ -174,9 +172,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.2" data-path="googlehack.html">
+        <li class="chapter " data-level="1.3.2" data-path="../hack/googlehack.html">
             
-                <a href="googlehack.html">
+                <a href="../hack/googlehack.html">
             
                     
                     Googlehack
@@ -187,9 +185,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.3" data-path="msf.html">
+        <li class="chapter " data-level="1.3.3" data-path="../hack/msf.html">
             
-                <a href="msf.html">
+                <a href="../hack/msf.html">
             
                     
                     Msf
@@ -235,7 +233,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Hack</a>
+        <a href=".." >模运算</a>
     </h1>
 </div>
 
@@ -250,19 +248,48 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x653B;&#x51FB;&#x94FE;">&#x653B;&#x51FB;&#x94FE;</h1>
-<p><img src="hack.assets/image-20210625170727040.png" alt="image-20210625170727040"></p>
-<h1 id="&#x5DE5;&#x5177;&#x94FE;">&#x5DE5;&#x5177;&#x94FE;</h1>
+                                <h1 id="&#x8FD0;&#x7B97;&#x89C4;&#x5219;">&#x8FD0;&#x7B97;&#x89C4;&#x5219;</h1>
 <blockquote>
-<p>Tips:  github&#x4E0B;&#x8F7D;&#x52A0;&#x901F;  <code>https://ghproxy.com/https://github.com/xxx</code></p>
+<p>&#x56DB;&#x5219;&#x8FD0;&#x7B97;</p>
 </blockquote>
-<pre><code>https://github.com/b1gcat/DarkEye
-https://github.com/shadow1ng/fscan
-https://github.com/OJ/gobuster
-https://github.com/shmilylty/OneForAll
-https://github.com/EnableSecurity/wafw00f
-https://github.com/danielmiessler/SecLists
+<pre><code class="lang-mathematica">(a + b) % p = (a % p + b % p) % p &#xFF08;<span class="hljs-number">1</span>&#xFF09;
+
+(a &#x2013; b) % p = (a % p &#x2013; b % p) % p &#xFF08;<span class="hljs-number">2</span>&#xFF09;
+
+(a * b) % p = (a % p * b % p) % p &#xFF08;<span class="hljs-number">3</span>&#xFF09;
+
+(a ^ b) % p = ((a % p) ^ b) % p &#xFF08;<span class="hljs-number">4</span>&#xFF09;
 </code></pre>
+<blockquote>
+<p>&#x7ED3;&#x5408;&#x5F8B;</p>
+</blockquote>
+<pre><code class="lang-mathematica"> ((a+b) % p + c) % p = (a + (b+c) % p) % p &#xFF08;<span class="hljs-number">5</span>&#xFF09;
+
+ ((a*b) % p * c)% p = (a * (b*c) % p) % p &#xFF08;<span class="hljs-number">6</span>&#xFF09;
+</code></pre>
+<blockquote>
+<p>&#x4EA4;&#x6362;&#x5F8B;</p>
+</blockquote>
+<pre><code class="lang-mathematica"> (a + b) % p = (b+a) % p &#xFF08;<span class="hljs-number">7</span>&#xFF09;
+
+ (a * b) % p = (b * a) % p &#xFF08;<span class="hljs-number">8</span>&#xFF09;
+</code></pre>
+<blockquote>
+<p>&#x5206;&#x914D;&#x5F8B;</p>
+</blockquote>
+<pre><code class="lang-mathematica"> ((a +b)% p * c) % p = ((a * c) % p + (b * c) % p) % p
+</code></pre>
+<blockquote>
+<p>&#x91CD;&#x8981;&#x5B9A;&#x7406;</p>
+</blockquote>
+<pre><code class="lang-mathematica"> &#x82E5;a&#x2261;b (% p)&#xFF0C;&#x5219;&#x5BF9;&#x4E8E;&#x4EFB;&#x610F;&#x7684;c&#xFF0C;&#x90FD;&#x6709;(a + c) &#x2261; (b + c) (%p)
+
+ &#x82E5;a&#x2261;b (% p)&#xFF0C;&#x5219;&#x5BF9;&#x4E8E;&#x4EFB;&#x610F;&#x7684;c&#xFF0C;&#x90FD;&#x6709;(a * c) &#x2261; (b * c) (%p)
+
+ &#x82E5;a&#x2261;b (% p)&#xFF0C;c&#x2261;d (% p)&#xFF0C;&#x5219; (a + c) &#x2261; (b + d) (%p)&#xFF0C;(a &#x2013; c) &#x2261; (b &#x2013; d) (%p)&#xFF0C;
+ (a * c) &#x2261; (b * d) (%p)&#xFF0C;(a / c) &#x2261; (b / d) (%p)
+</code></pre>
+
                                 
                                 </section>
                             
@@ -289,12 +316,8 @@ https://github.com/danielmiessler/SecLists
 
             
                 
-                <a href="../crypto/SM2.html" class="navigation navigation-prev " aria-label="Previous page: SM 2">
-                    <i class="fa fa-angle-left"></i>
-                </a>
                 
-                
-                <a href="内网技巧.html" class="navigation navigation-next " aria-label="Next page: 内网技巧">
+                <a href="SM2.html" class="navigation navigation-next navigation-unique" aria-label="Next page: SM 2">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -305,7 +328,7 @@ https://github.com/danielmiessler/SecLists
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hack","level":"1.3","depth":1,"next":{"title":"内网技巧","level":"1.3.1","depth":2,"path":"hack/内网技巧.md","ref":"hack/内网技巧.md","articles":[]},"previous":{"title":"SM 2","level":"1.2.2","depth":2,"path":"crypto/SM2.md","ref":"crypto/SM2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","copy-code-button"],"pluginsConfig":{"search-pro":{},"copy-code-button":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"hack/hack.md","mtime":"2021-06-29T12:57:59.845Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-02T05:03:35.868Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"模运算","level":"1.2.1","depth":2,"next":{"title":"SM 2","level":"1.2.2","depth":2,"path":"crypto/SM2.md","ref":"crypto/SM2.md","articles":[]},"previous":{"title":"Crypto","level":"1.2","depth":1,"ref":"","articles":[{"title":"模运算","level":"1.2.1","depth":2,"path":"crypto/模运算.md","ref":"crypto/模运算.md","articles":[]},{"title":"SM 2","level":"1.2.2","depth":2,"path":"crypto/SM2.md","ref":"crypto/SM2.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","copy-code-button"],"pluginsConfig":{"search-pro":{},"copy-code-button":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"crypto/模运算.md","mtime":"2021-06-29T12:57:59.306Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-29T13:15:35.545Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
