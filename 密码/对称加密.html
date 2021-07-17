@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>模运算 · GitBook</title>
+        <title>对称加密 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="RSA.html" />
+    <link rel="next" href="模运算.html" />
     
-    
-    <link rel="prev" href="对称加密.html" />
     
 
     </head>
@@ -116,7 +114,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="对称加密.html">
+        <li class="chapter active" data-level="1.2.1" data-path="对称加密.html">
             
                 <a href="对称加密.html">
             
@@ -129,7 +127,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2" data-path="模运算.html">
+        <li class="chapter " data-level="1.2.2" data-path="模运算.html">
             
                 <a href="模运算.html">
             
@@ -274,7 +272,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >模运算</a>
+        <a href=".." >对称加密</a>
     </h1>
 </div>
 
@@ -289,47 +287,18 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x8FD0;&#x7B97;&#x89C4;&#x5219;">&#x8FD0;&#x7B97;&#x89C4;&#x5219;</h1>
-<blockquote>
-<p>&#x56DB;&#x5219;&#x8FD0;&#x7B97;</p>
-</blockquote>
-<pre><code class="lang-mathematica">(a + b) % p = (a % p + b % p) % p &#xFF08;<span class="hljs-number">1</span>&#xFF09;
-
-(a &#x2013; b) % p = (a % p &#x2013; b % p) % p &#xFF08;<span class="hljs-number">2</span>&#xFF09;
-
-(a * b) % p = (a % p * b % p) % p &#xFF08;<span class="hljs-number">3</span>&#xFF09;
-
-(a ^ b) % p = ((a % p) ^ b) % p &#xFF08;<span class="hljs-number">4</span>&#xFF09;
-</code></pre>
-<blockquote>
-<p>&#x7ED3;&#x5408;&#x5F8B;</p>
-</blockquote>
-<pre><code class="lang-mathematica"> ((a+b) % p + c) % p = (a + (b+c) % p) % p &#xFF08;<span class="hljs-number">5</span>&#xFF09;
-
- ((a*b) % p * c)% p = (a * (b*c) % p) % p &#xFF08;<span class="hljs-number">6</span>&#xFF09;
-</code></pre>
-<blockquote>
-<p>&#x4EA4;&#x6362;&#x5F8B;</p>
-</blockquote>
-<pre><code class="lang-mathematica"> (a + b) % p = (b+a) % p &#xFF08;<span class="hljs-number">7</span>&#xFF09;
-
- (a * b) % p = (b * a) % p &#xFF08;<span class="hljs-number">8</span>&#xFF09;
-</code></pre>
-<blockquote>
-<p>&#x5206;&#x914D;&#x5F8B;</p>
-</blockquote>
-<pre><code class="lang-mathematica"> ((a +b)% p * c) % p = ((a * c) % p + (b * c) % p) % p
-</code></pre>
-<blockquote>
-<p>&#x91CD;&#x8981;&#x5B9A;&#x7406;</p>
-</blockquote>
-<pre><code class="lang-mathematica"> &#x82E5;a&#x2261;b (% p)&#xFF0C;&#x5219;&#x5BF9;&#x4E8E;&#x4EFB;&#x610F;&#x7684;c&#xFF0C;&#x90FD;&#x6709;(a + c) &#x2261; (b + c) (%p)
-
- &#x82E5;a&#x2261;b (% p)&#xFF0C;&#x5219;&#x5BF9;&#x4E8E;&#x4EFB;&#x610F;&#x7684;c&#xFF0C;&#x90FD;&#x6709;(a * c) &#x2261; (b * c) (%p)
-
- &#x82E5;a&#x2261;b (% p)&#xFF0C;c&#x2261;d (% p)&#xFF0C;&#x5219; (a + c) &#x2261; (b + d) (%p)&#xFF0C;(a &#x2013; c) &#x2261; (b &#x2013; d) (%p)&#xFF0C;
- (a * c) &#x2261; (b * d) (%p)&#xFF0C;(a / c) &#x2261; (b / d) (%p)
-</code></pre>
+                                <h1 id="&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;">&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;</h1>
+<h2 id="&#x52A0;&#x5BC6;&#x6A21;&#x5F0F;">&#x52A0;&#x5BC6;&#x6A21;&#x5F0F;</h2>
+<h3 id="ecb&#x7535;&#x7801;&#x672C;&#x6A21;&#x5F0F;">ECB&#x7535;&#x7801;&#x672C;&#x6A21;&#x5F0F;</h3>
+<p><img src="&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;.assets/Center.jpeg" alt="img"></p>
+<p><img src="&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;.assets/Center-20210716120401717.jpeg" alt="img"></p>
+<h3 id="cbc&#x5BC6;&#x6587;&#x5206;&#x7EC4;&#x94FE;&#x63A5;">CBC&#x5BC6;&#x6587;&#x5206;&#x7EC4;&#x94FE;&#x63A5;</h3>
+<p><img src="&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;.assets/Center-20210716120512715.jpeg" alt="img"></p>
+<p><img src="&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;.assets/Center-20210716120532540.jpeg" alt="img"></p>
+<h3 id="cfb&#x5BC6;&#x6587;&#x53CD;&#x9988;&#x6A21;&#x5F0F;">CFB&#x5BC6;&#x6587;&#x53CD;&#x9988;&#x6A21;&#x5F0F;</h3>
+<p><img src="&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;.assets/Center-20210716120723149.jpeg" alt="img"></p>
+<h3 id="ofb&#x8F93;&#x51FA;&#x53CD;&#x9988;&#x6A21;&#x5F0F;">OFB&#x8F93;&#x51FA;&#x53CD;&#x9988;&#x6A21;&#x5F0F;</h3>
+<p><img src="&#x5BF9;&#x79F0;&#x52A0;&#x5BC6;.assets/Center-20210716121150863.jpeg" alt="img"></p>
 
                                 
                                 </section>
@@ -357,12 +326,8 @@
 
             
                 
-                <a href="对称加密.html" class="navigation navigation-prev " aria-label="Previous page: 对称加密">
-                    <i class="fa fa-angle-left"></i>
-                </a>
                 
-                
-                <a href="RSA.html" class="navigation navigation-next " aria-label="Next page: RSA">
+                <a href="模运算.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 模运算">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -373,7 +338,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"模运算","level":"1.2.2","depth":2,"next":{"title":"RSA","level":"1.2.3","depth":2,"path":"密码/RSA.md","ref":"密码/RSA.md","articles":[]},"previous":{"title":"对称加密","level":"1.2.1","depth":2,"path":"密码/对称加密.md","ref":"密码/对称加密.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","copy-code-button"],"pluginsConfig":{"search-pro":{},"copy-code-button":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"密码/模运算.md","mtime":"2021-06-29T12:57:59.306Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-17T00:14:55.567Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"对称加密","level":"1.2.1","depth":2,"next":{"title":"模运算","level":"1.2.2","depth":2,"path":"密码/模运算.md","ref":"密码/模运算.md","articles":[]},"previous":{"title":"密码","level":"1.2","depth":1,"ref":"","articles":[{"title":"对称加密","level":"1.2.1","depth":2,"path":"密码/对称加密.md","ref":"密码/对称加密.md","articles":[]},{"title":"模运算","level":"1.2.2","depth":2,"path":"密码/模运算.md","ref":"密码/模运算.md","articles":[]},{"title":"RSA","level":"1.2.3","depth":2,"path":"密码/RSA.md","ref":"密码/RSA.md","articles":[]},{"title":"SM 2","level":"1.2.4","depth":2,"path":"密码/SM2.md","ref":"密码/SM2.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["-lunr","-search","search-pro","copy-code-button"],"pluginsConfig":{"search-pro":{},"copy-code-button":{},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"密码/对称加密.md","mtime":"2021-07-16T04:11:52.321Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-07-17T00:14:55.567Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
